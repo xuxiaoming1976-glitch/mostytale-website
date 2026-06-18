@@ -1,0 +1,64 @@
+---
+import type { Product } from '../../data/products';
+import Button from '../ui/Button.astro';
+import StarRating from '../ui/StarRating.astro';
+
+interface Props {
+  product: Product;
+  index?: number;
+}
+
+const { product, index = 0 } = Astro.props;
+---
+
+<div class={`group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 ${index === 0 ? 'animate-fade-in' : ''}`}>
+  <!-- Product Image -->
+  <a href={`/products/${product.category}/${product.slug}/`} class="block aspect-square bg-gradient-to-br from-brand-cream to-gray-50 overflow-hidden">
+    <div class="w-full h-full flex items-center justify-center p-8">
+      {product.images[0] ? (
+        <img
+          src={product.images[0]}
+          alt={product.name}
+          class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+          loading={index < 2 ? 'eager' : 'lazy'}
+          width="400"
+          height="400"
+        />
+      ) : (
+        <div class="text-6xl text-brand-gold/30">
+          {product.category === 'cleaning' ? '🧹' : product.category === 'golf-bags' ? '🎒' : '⛳'}
+        </div>
+      )}
+    </div>
+    <!-- Category badge -->
+    <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/80 backdrop-blur-sm rounded-full text-xs font-medium text-text-muted capitalize">
+      {product.category === 'cleaning' ? 'Cleaning' : product.category === 'golf-bags' ? 'Golf Bags' : 'Accessories'}
+    </span>
+  </a>
+
+  <!-- Content -->
+  <div class="p-5">
+    <h3 class="font-heading font-semibold text-lg text-text mb-1 group-hover:text-brand-green transition-colors">
+      <a href={`/products/${product.category}/${product.slug}/`}>
+        {product.name}
+      </a>
+    </h3>
+    <p class="text-sm text-text-muted mb-3 line-clamp-2">{product.shortDescription}</p>
+
+    <!-- Rating -->
+    <div class="flex items-center gap-2 mb-4">
+      <StarRating rating={product.rating} size="sm" />
+      <span class="text-xs text-text-muted">({product.reviewCount})</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2">
+      <Button href={`/products/${product.category}/${product.slug}/`} variant="ghost" size="sm" class="flex-1">
+        Details
+      </Button>
+      <Button href={product.amazonUrl} variant="amazon" size="sm" external class="flex-1">
+        Buy
+      </Button>
+    </div>
+  </div>
+</div>

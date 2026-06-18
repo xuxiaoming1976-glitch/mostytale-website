@@ -1,0 +1,34 @@
+---
+export interface Props {
+  id?: string;
+  class?: string;
+  background?: 'white' | 'cream' | 'green' | 'dark';
+  padding?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  id,
+  class: extraClass = '',
+  background = 'white',
+  padding = 'md',
+} = Astro.props;
+
+const bgClasses: Record<string, string> = {
+  white: 'bg-white',
+  cream: 'bg-brand-cream',
+  green: 'bg-brand-green text-white',
+  dark: 'bg-text text-white',
+};
+
+const padClasses: Record<string, string> = {
+  sm: 'py-8 px-4 sm:px-6 lg:px-8',
+  md: 'py-16 px-4 sm:px-6 lg:px-8',
+  lg: 'py-24 px-4 sm:px-6 lg:px-8',
+};
+---
+
+<section id={id} class={`${bgClasses[background]} ${padClasses[padding]} ${extraClass}`}>
+  <div class="max-w-7xl mx-auto">
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+
+const faqs = [
+  {
+    q: 'How do I use the MOSTY Golf Club & Ball Cleaner Bag?',
+    a: 'Simply add about 1/5 cup of water into the waterproof pouch, clip it to your golf bag using the carabiner, and you\'re ready to go. Slide your club face into the bag, give it a few gentle scrubs, and your club is clean in seconds. The dual-sided design also cleans golf balls.',
+  },
+  {
+    q: 'Will the cleaner bag leak and get my golf bag wet?',
+    a: 'No! The interior features a fully sealed waterproof TPU liner. When closed properly, no water escapes. Thousands of customers have confirmed it keeps their bags completely dry.',
+  },
+  {
+    q: 'Does the microfiber scratch my clubs?',
+    a: 'Absolutely not. We use premium scratch-free microfiber specifically designed to be gentle on club faces while effectively removing dirt and grass from grooves.',
+  },
+  {
+    q: 'How long does the water last in the cleaner bag?',
+    a: 'Typically 9-18 holes depending on how frequently you clean and the temperature. On hot days, you may want to refresh the water at the turn. The sealed design minimizes evaporation.',
+  },
+  {
+    q: 'Where can I buy MOSTY products?',
+    a: 'All MOSTY products are available on Amazon.com with Prime shipping. Visit our Amazon store or click the "Buy on Amazon" button on any product page.',
+  },
+  {
+    q: 'Do you ship internationally?',
+    a: 'Since we sell exclusively through Amazon, shipping availability depends on Amazon\'s international shipping policies for your region. Most products are available for international shipping.',
+  },
+  {
+    q: 'What is your return policy?',
+    a: 'We offer a 30-day satisfaction guarantee. If you\'re not completely happy with your MOSTY product, you can return it through Amazon\'s standard return process for a full refund.',
+  },
+  {
+    q: 'Is the travel bag suitable for air travel?',
+    a: 'Yes! The MOSTY Golf Travel Bag is specifically designed for air travel. It features 360° foam padding, heavy-duty 600D polyester construction, internal straps, and smooth-rolling wheels for easy airport navigation.',
+  },
+  {
+    q: 'Can I machine wash the golf towel?',
+    a: 'Yes, the MOSTY Premium Golf Towel is fully machine washable. We recommend washing in cold water and air drying for best results and longest lifespan.',
+  },
+  {
+    q: 'Do you offer wholesale or bulk pricing?',
+    a: 'Yes! We offer wholesale pricing for pro shops, golf courses, and corporate orders. Please contact us through the Contact page or email us directly for more information.',
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ"
+  description="Frequently asked questions about MOSTY golf products — cleaning, usage, shipping, returns, and more."
+>
+  <Section background="green" padding="sm">
+    <div class="text-center py-4">
+      <h1 class="text-h1 text-white mb-4">Frequently Asked Questions</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        Everything you need to know about MOSTY products and how to get the most out of them.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="white">
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, i) => (
+        <details class="group bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-heading font-semibold text-text group-open:text-brand-green transition-colors">
+            <span class="pr-4">{faq.q}</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-text-muted group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-text-light leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </Section>
+
+  <Section background="cream" padding="sm">
+    <div class="text-center">
+      <h2 class="text-h3 text-text mb-3">Still Have Questions?</h2>
+      <p class="text-sm text-text-light mb-6">We're here to help. Reach out and we'll get back to you within 24 hours.</p>
+      <Button href="/contact/" variant="primary" size="md">
+        Contact Us →
+      </Button>
+    </div>
+  </Section>
+</BaseLayout>

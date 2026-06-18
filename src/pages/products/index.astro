@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+import { categories } from '../../data/products';
+
+const categoryIcons: Record<string, string> = {
+  cleaning: '💧',
+  'golf-bags': '🎒',
+  accessories: '🔧',
+};
+---
+
+<BaseLayout
+  title="Products"
+  description="Browse MOSTY's complete collection of premium golf accessories — cleaning solutions, travel bags, stand bags, and more."
+>
+  <Section background="green" padding="sm">
+    <div class="text-center py-4">
+      <h1 class="text-h1 text-white mb-3">Our Products</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        Professional-grade golf accessories designed to elevate your game. Every product ships fast via Amazon Prime.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="white">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {categories.map((cat) => (
+        <a
+          href={`/products/${cat.slug}/`}
+          class="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+        >
+          <div class="text-5xl mb-5">{categoryIcons[cat.slug] || '⛳'}</div>
+          <h2 class="text-xl font-heading font-semibold text-text mb-3 group-hover:text-brand-green transition-colors">
+            {cat.name}
+          </h2>
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            {cat.description}
+          </p>
+          <span class="inline-flex items-center gap-1 text-sm font-medium text-brand-green group-hover:text-brand-green-light transition-colors">
+            Browse {cat.name} <span class="text-lg">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <Section background="cream" padding="sm">
+    <div class="text-center">
+      <p class="text-text-light mb-4">Can't find what you're looking for?</p>
+      <Button href="/contact/" variant="outline" size="md">
+        Contact Us →
+      </Button>
+    </div>
+  </Section>
+</BaseLayout>

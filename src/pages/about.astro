@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="About Us"
+  description="Learn about the MOSTY brand — our story, mission, and commitment to quality golf accessories."
+>
+  <!-- Hero -->
+  <Section background="green" padding="sm">
+    <div class="text-center py-4">
+      <h1 class="text-h1 text-white mb-4">About MOSTY</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        Built by golfers, for golfers. We're on a mission to keep your gear in championship condition.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Our Story -->
+  <Section background="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+      <div>
+        <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Our Story</span>
+        <h2 class="text-h2 text-text mt-2 mb-6">Where MOSTY Began</h2>
+        <div class="prose prose-text max-w-none">
+          <p>
+            It all started on a muddy golf course. After spending way too long trying to clean a club face with a
+            damp towel that barely worked, our founder had a simple realization: <em>there has to be a better way</em>.
+          </p>
+          <p>
+            That frustration sparked the idea for MOSTY. We set out to create innovative, portable cleaning tools
+            that actually work — products that keep your clubs and balls spotless from the first tee to the 18th green.
+          </p>
+          <p>
+            Today, <strong>5,000+ golfers</strong> across 20+ countries trust MOSTY to keep their gear in peak condition.
+            We're proud to be the go-to brand for golfers who demand the best from their equipment.
+          </p>
+        </div>
+      </div>
+      <div class="aspect-square bg-gradient-to-br from-brand-green via-brand-green-light to-brand-green-dark rounded-2xl flex items-center justify-center">
+        <div class="text-9xl text-white/20">⛳</div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Mission & Values -->
+  <Section background="cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">What Drives Us</span>
+        <h2 class="text-h2 text-text mt-2 mb-4">Our Mission & Values</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="font-heading font-semibold text-text text-lg mb-3">Our Mission</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            To create the most innovative, portable, and effective golf cleaning accessories so every golfer
+            can play with clean, high-performing equipment.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
+          <div class="text-4xl mb-4">🔬</div>
+          <h3 class="font-heading font-semibold text-text text-lg mb-3">Innovation First</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            We don't copy — we create. Every MOSTY product is designed from scratch to solve a real problem
+            golfers face on the course.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
+          <div class="text-4xl mb-4">❤️</div>
+          <h3 class="font-heading font-semibold text-text text-lg mb-3">Customer Obsessed</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Your satisfaction is our north star. We back every product with a 30-day guarantee and
+            responsive support that puts golfers first.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Timeline -->
+  <Section background="white">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">The Journey</span>
+        <h2 class="text-h2 text-text mt-2 mb-4">Our Timeline</h2>
+      </div>
+      <div class="space-y-0">
+        {[
+          { year: '2024', title: 'The Spark', desc: 'After a frustrating round, the idea for a better club cleaner was born.' },
+          { year: '2025', title: 'First Product Launch', desc: 'Launched the Golf Club & Ball Cleaner Bag on Amazon — sold out in 2 weeks.' },
+          { year: '2025', title: 'Expanding the Line', desc: 'Added the Premium Golf Towel and Travel Bag to meet customer demand.' },
+          { year: '2026', title: 'Global Reach', desc: 'Now serving 5,000+ golfers across 20+ countries. More products in development.' },
+        ].map((item, i) => (
+          <div class="flex gap-6 pb-8 relative">
+            {i < 3 && <div class="absolute left-[2.15rem] top-12 bottom-0 w-px bg-brand-green/20"></div>}
+            <div class="flex-shrink-0 w-16 text-right">
+              <span class="font-heading font-bold text-brand-green text-lg">{item.year}</span>
+            </div>
+            <div class="flex-1 bg-brand-cream rounded-xl p-5">
+              <h3 class="font-heading font-semibold text-text mb-1">{item.title}</h3>
+              <p class="text-sm text-text-light">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section background="green" padding="md">
+    <div class="text-center">
+      <h2 class="text-h2 text-white mb-4">Join the MOSTY Family</h2>
+      <p class="text-white/80 text-lg max-w-xl mx-auto mb-8">
+        Experience the difference that clean, well-maintained gear makes on your game.
+      </p>
+      <Button href="/products/" variant="outline" size="lg" class="!border-white/30 !text-white hover:!bg-white hover:!text-brand-green">
+        Explore Our Products →
+      </Button>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import { siteConfig } from '../../data/site';
+import StarRating from '../ui/StarRating.astro';
+---
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+  <!-- Amazon Store -->
+  <div class="flex flex-col items-center gap-2 p-4">
+    <svg class="w-10 h-10 text-brand-gold mb-1" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5z"/>
+      <circle cx="9" cy="9" r="2"/>
+      <circle cx="14" cy="8" r="2"/>
+    </svg>
+    <span class="font-semibold text-text">Official Amazon Store</span>
+    <span class="text-xs text-text-muted">Prime eligible, fast shipping</span>
+  </div>
+
+  <!-- Rating -->
+  <div class="flex flex-col items-center gap-2 p-4">
+    <div class="text-3xl font-bold text-brand-gold mb-1">{siteConfig.stats.averageRating}</div>
+    <StarRating rating={siteConfig.stats.averageRating} size="sm" />
+    <span class="text-xs text-text-muted">{siteConfig.stats.reviewCount.toLocaleString()}+ verified reviews</span>
+  </div>
+
+  <!-- Customers -->
+  <div class="flex flex-col items-center gap-2 p-4">
+    <div class="text-3xl font-bold text-brand-gold mb-1">{siteConfig.stats.customersServed.toLocaleString()}+</div>
+    <span class="font-semibold text-text">Golfers Served</span>
+    <span class="text-xs text-text-muted">Across 20+ countries</span>
+  </div>
+
+  <!-- Quality -->
+  <div class="flex flex-col items-center gap-2 p-4">
+    <svg class="w-10 h-10 text-brand-gold mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+    <span class="font-semibold text-text">100% Satisfaction</span>
+    <span class="text-xs text-text-muted">30-day money-back guarantee</span>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand CSS Custom Properties */
+:root {
+  --color-brand-green: #1B5E20;
+  --color-brand-green-light: #2E7D32;
+  --color-brand-gold: #C9A84C;
+  --color-brand-cream: #FDF6E3;
+  --color-cta: #E87722;
+  --color-cta-hover: #D1651A;
+  --color-text: #2C2C2C;
+  --color-text-light: #5A5A5A;
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text);
+  background-color: #FAFAFA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-brand-green);
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Smooth transition for interactive elements */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Prose overrides for blog content */
+.prose {
+  max-width: 65ch;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}

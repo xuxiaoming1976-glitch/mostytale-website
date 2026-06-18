@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import TrustBar from '../components/home/TrustBar.astro';
+import FeaturedProducts from '../components/home/FeaturedProducts.astro';
+import WhyMosty from '../components/home/WhyMosty.astro';
+import ReviewsCarousel from '../components/home/ReviewsCarousel.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title="Premium Golf Cleaning Accessories"
+  image="/images/og-default.png"
+>
+  <!-- Hero -->
+  <HeroSection />
+
+  <!-- Trust Bar -->
+  <Section background="white" padding="sm">
+    <TrustBar />
+  </Section>
+
+  <!-- Featured Products -->
+  <Section background="cream" id="products">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Our Collection</span>
+      <h2 class="text-h2 text-text mt-2 mb-4">Featured Products</h2>
+      <p class="text-text-light max-w-2xl mx-auto">
+        Discover our most popular golf accessories. Each product is designed with one goal:
+        helping you play better golf with cleaner equipment.
+      </p>
+    </div>
+    <FeaturedProducts />
+    <div class="text-center mt-10">
+      <Button href="/products/" variant="primary" size="lg">
+        View All Products →
+      </Button>
+    </div>
+  </Section>
+
+  <!-- Why MOSTY -->
+  <Section background="white" id="why-mosty">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Why Choose Us</span>
+      <h2 class="text-h2 text-text mt-2 mb-4">Why MOSTY?</h2>
+      <p class="text-text-light max-w-2xl mx-auto">
+        We're not just another golf accessory brand. Here's what sets MOSTY apart.
+      </p>
+    </div>
+    <WhyMosty />
+  </Section>
+
+  <!-- Customer Reviews -->
+  <Section background="cream" id="reviews">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-brand-gold uppercase tracking-wider">Testimonials</span>
+      <h2 class="text-h2 text-text mt-2 mb-4">What Golfers Say</h2>
+      <p class="text-text-light max-w-2xl mx-auto">
+        Join {siteConfig.stats.customersServed.toLocaleString()}+ happy golfers who trust MOSTY for their gear.
+      </p>
+    </div>
+    <ReviewsCarousel />
+    <div class="text-center mt-8">
+      <Button href={siteConfig.amazonStoreUrl} variant="amazon" size="md" external>
+        Read All Reviews on Amazon →
+      </Button>
+    </div>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section background="green" padding="md">
+    <div class="text-center">
+      <h2 class="text-h2 text-white mb-4">Ready to Clean Your Game?</h2>
+      <p class="text-white/80 text-lg max-w-xl mx-auto mb-8">
+        Join thousands of golfers who trust MOSTY to keep their clubs and balls in championship condition.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button
+          href={siteConfig.amazonStoreUrl}
+          variant="amazon"
+          size="lg"
+          external
+          class="!bg-cta !text-white hover:!bg-cta-hover"
+        >
+          Shop on Amazon →
+        </Button>
+        <Button href="/products/" variant="outline" size="lg" class="!border-white/30 !text-white hover:!bg-white hover:!text-brand-green">
+          Explore Products
+        </Button>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

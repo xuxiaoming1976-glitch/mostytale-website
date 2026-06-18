@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+
+// Blog posts data (will be replaced with MDX content collections later)
+const blogPosts = [
+  {
+    slug: 'how-to-clean-golf-clubs-on-course',
+    title: 'How to Clean Your Golf Clubs on the Course — A Complete Guide',
+    excerpt: 'Learn the fastest and most effective way to keep your clubs clean during a round. We cover tools, techniques, and pro tips.',
+    date: '2026-06-10',
+    author: 'MOSTY Team',
+    image: '/images/blog/golf-cleaning-guide.webp',
+    category: 'Guides',
+  },
+  {
+    slug: 'why-clean-clubs-matter',
+    title: 'Why Clean Clubs Matter: The Science Behind Better Ball Striking',
+    excerpt: 'Dirty grooves cost you spin, control, and distance. Here is the data-backed case for keeping your clubs spotless.',
+    date: '2026-05-25',
+    author: 'MOSTY Team',
+    image: '/images/blog/clean-clubs-science.webp',
+    category: 'Performance',
+  },
+  {
+    slug: 'top-golf-accessories-2025',
+    title: 'Top 5 Golf Accessories Every Golfer Needs in 2025',
+    excerpt: 'From cleaning tools to travel gear, these are the must-have accessories that actually improve your game.',
+    date: '2026-05-12',
+    author: 'MOSTY Team',
+    image: '/images/blog/top-accessories.webp',
+    category: 'Gear',
+  },
+  {
+    slug: 'golf-travel-tips',
+    title: 'Golf Travel Tips: How to Pack Your Clubs for a Flight',
+    excerpt: 'Flying with your clubs? Here is how to protect your gear, pack smart, and avoid baggage claim disasters.',
+    date: '2026-04-28',
+    author: 'MOSTY Team',
+    image: '/images/blog/travel-tips.webp',
+    category: 'Guides',
+  },
+  {
+    slug: 'golf-ball-maintenance',
+    title: 'The Ultimate Guide to Golf Ball Maintenance',
+    excerpt: 'Clean golf balls fly farther and roll truer. Learn how to maintain your balls for optimal performance.',
+    date: '2026-04-10',
+    author: 'MOSTY Team',
+    image: '/images/blog/ball-maintenance.webp',
+    category: 'Guides',
+  },
+  {
+    slug: 'mosty-vs-traditional-methods',
+    title: 'MOSTY vs Traditional Club Cleaning Methods: A Comparison',
+    excerpt: 'How does the MOSTY cleaner bag stack up against towels, brushes, and water buckets? We tested them all.',
+    date: '2026-03-22',
+    author: 'MOSTY Team',
+    image: '/images/blog/comparison.webp',
+    category: 'Reviews',
+  },
+  {
+    slug: 'best-golf-gifts-2025',
+    title: 'Best Golf Gifts for Him: Holiday Gift Guide',
+    excerpt: 'Struggling to find the perfect golf gift? Here are our top picks that any golfer would love to unwrap.',
+    date: '2025-12-05',
+    author: 'MOSTY Team',
+    image: '/images/blog/gift-guide.webp',
+    category: 'Guides',
+  },
+  {
+    slug: 'how-often-clean-golf-clubs',
+    title: 'How Often Should You Clean Your Golf Clubs? Pro Tips',
+    excerpt: 'Tour pros clean their clubs after every shot. Here is how to build a cleaning routine that fits your game.',
+    date: '2025-11-15',
+    author: 'MOSTY Team',
+    image: '/images/blog/cleaning-frequency.webp',
+    category: 'Guides',
+  },
+];
+---
+
+<BaseLayout
+  title="Blog"
+  description="Expert golf tips, gear cleaning guides, and product reviews to help you play better golf."
+>
+  <!-- Hero -->
+  <Section background="green" padding="sm">
+    <div class="text-center py-4">
+      <h1 class="text-h1 text-white mb-4">MOSTY Blog</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        Golf tips, gear guides, and product insights to help you play better.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Blog Grid -->
+  <Section background="white">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {blogPosts.map((post) => (
+        <article class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <a href={`/blog/${post.slug}/`} class="block">
+            <div class="aspect-video bg-gradient-to-br from-brand-green/10 to-brand-cream overflow-hidden">
+              {post.image ? (
+                <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="225" />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-4xl text-brand-gold/20">🏌️</div>
+              )}
+            </div>
+          </a>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-2.5 py-0.5 bg-brand-green/10 text-brand-green text-xs font-medium rounded-full">
+                {post.category}
+              </span>
+              <span class="text-xs text-text-muted">
+                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+            </div>
+            <h2 class="font-heading font-semibold text-lg text-text mb-2 group-hover:text-brand-green transition-colors leading-snug">
+              <a href={`/blog/${post.slug}/`}>{post.title}</a>
+            </h2>
+            <p class="text-sm text-text-light line-clamp-3 mb-4">{post.excerpt}</p>
+            <a
+              href={`/blog/${post.slug}/`}
+              class="inline-flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-light transition-colors"
+            >
+              Read Article <span class="text-lg">→</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Newsletter -->
+  <Section background="cream" padding="sm">
+    <div class="text-center max-w-lg mx-auto">
+      <h2 class="text-h3 text-text mb-3">Get Golf Tips in Your Inbox</h2>
+      <p class="text-sm text-text-light mb-6">Subscribe for product updates, cleaning tips, and exclusive deals.</p>
+      <form class="flex gap-2" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent" required />
+        <button type="submit" class="px-6 py-2.5 bg-brand-green text-white font-semibold text-sm rounded-lg hover:bg-brand-green-light transition-colors whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </Section>
+</BaseLayout>

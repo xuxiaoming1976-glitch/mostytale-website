@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import ContactForm from '../components/ui/ContactForm.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title="Contact Us"
+  description="Get in touch with MOSTY — product questions, wholesale inquiries, and customer support."
+>
+  <Section background="green" padding="sm">
+    <div class="text-center py-4">
+      <h1 class="text-h1 text-white mb-4">Contact Us</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        We'd love to hear from you. Whether it's a product question, business inquiry, or just feedback — reach out!
+      </p>
+    </div>
+  </Section>
+
+  <Section background="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Form -->
+      <div>
+        <h2 class="text-h3 text-text mb-6">Send Us a Message</h2>
+        <ContactForm />
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-h3 text-text mb-6">Other Ways to Reach Us</h2>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-text">Email</h3>
+              <a href={`mailto:${siteConfig.email}`} class="text-brand-green hover:text-brand-green-light transition-colors text-sm">
+                {siteConfig.email}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-text">Response Time</h3>
+              <p class="text-text-light text-sm">We typically respond within <strong>24 hours</strong> on business days.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-text">Wholesale & Partnerships</h3>
+              <p class="text-text-light text-sm">
+                Interested in carrying MOSTY products in your shop or partnering with us? Select "Wholesale Inquiry" from the subject dropdown above.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="mt-10 pt-8 border-t border-gray-100">
+          <h3 class="font-medium text-text mb-4">Follow Us</h3>
+          <div class="flex gap-3">
+            {Object.entries(siteConfig.social).map(([platform, url]) =>
+              url && (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 bg-brand-cream rounded-xl flex items-center justify-center text-text-light hover:bg-brand-green hover:text-white transition-colors"
+                  aria-label={platform}
+                >
+                  <span class="text-sm font-medium capitalize">{platform}</span>
+                </a>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

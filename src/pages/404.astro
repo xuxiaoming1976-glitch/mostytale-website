@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist."
+  noindex={true}
+>
+  <Section background="cream" padding="lg">
+    <div class="text-center max-w-lg mx-auto">
+      <div class="text-8xl mb-6">🏌️</div>
+      <h1 class="text-h1 text-text mb-4">404 — Lost Ball</h1>
+      <p class="text-lg text-text-light mb-8">
+        Looks like this page went out of bounds. Don't worry — even pros hit wayward shots sometimes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/" variant="primary" size="md">
+          Back to Home →
+        </Button>
+        <Button href="/products/" variant="outline" size="md">
+          Browse Products
+        </Button>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+export interface Props {
+  href?: string;
+  variant?: 'primary' | 'amazon' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  external?: boolean;
+  class?: string;
+}
+
+const {
+  href = '#',
+  variant = 'primary',
+  size = 'md',
+  external = false,
+  class: extraClass = '',
+} = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center gap-2 font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+
+const variantClasses: Record<string, string> = {
+  primary: 'bg-brand-green text-white hover:bg-brand-green-light focus:ring-brand-green shadow-sm hover:shadow-md',
+  amazon: 'bg-cta text-white hover:bg-cta-hover focus:ring-cta shadow-sm hover:shadow-md',
+  outline: 'border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white focus:ring-brand-green',
+  ghost: 'text-text-light hover:text-brand-green hover:bg-brand-cream/50 focus:ring-brand-green',
+};
+
+const sizeClasses: Record<string, string> = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-sm',
+  lg: 'px-8 py-3.5 text-base',
+};
+
+const targetRel = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+
+<a
+  href={href}
+  class={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${extraClass}`}
+  {...targetRel}
+>
+  <slot />
+</a>
