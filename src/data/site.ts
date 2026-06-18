@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
     'MOSTY offers professional-grade golf club & ball cleaners, towels, and accessories. Keep your clubs in championship condition. Shop on Amazon.',
   url: 'https://mostytale.com',
   ogImage: '/images/og-default.png',
-  email: 'support@mostytale.com',
+  email: 'cs@mostytale.com',
   amazonStoreUrl: 'https://www.amazon.com/stores/MOSTY',
   social: {
     instagram: 'https://instagram.com/mosty',
