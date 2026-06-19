@@ -21,6 +21,14 @@ const props = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Force HTTPS redirect for visitors arriving via HTTP -->
+    <script is:inline>
+      (function () {
+        if (location.protocol === 'http:' && !location.hostname.includes('localhost')) {
+          location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+        }
+      })();
+    </script>
     <SEO {...props} />
   </head>
   <body class="min-h-screen flex flex-col bg-white font-body text-text">
