@@ -84,6 +84,7 @@ export const products: Product[] = [
       '1x Quick Start Guide',
     ],
     images: [
+      '/images/products/club-cleaner-main.jpg',
       '/images/products/club-cleaner-01.png',
       '/images/products/club-cleaner-02.jpg',
       '/images/products/club-cleaner-03.jpg',
@@ -142,6 +143,7 @@ export const products: Product[] = [
       '1x Carabiner Clip',
     ],
     images: [
+      '/images/products/towel-main.jpg',
       '/images/products/towel-01.jpg',
       '/images/products/towel-02.jpg',
       '/images/products/towel-03.jpg',
@@ -316,6 +318,7 @@ export const products: Product[] = [
       '1x Instruction Card',
     ],
     images: [
+      '/images/products/gloves-main.jpg',
       '/images/products/hair-removal-gloves-01.jpg',
       '/images/products/hair-removal-gloves-02.jpg',
       '/images/products/hair-removal-gloves-03.jpg',
