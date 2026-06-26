@@ -26,15 +26,22 @@ import { mainNavigation } from '../../data/navigation';
                   <path d="M1 1l4 4 4-4" />
                 </svg>
               </button>
-              <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
-                {item.children.map((child) => (
-                  <a
-                    href={child.href}
-                    class="block px-4 py-2 text-sm text-text-light hover:text-brand-green hover:bg-brand-cream/50 transition-colors"
-                  >
-                    {child.label}
-                  </a>
-                ))}
+              <div class="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 flex">
+                <div class="w-48">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-4 py-2 text-sm text-text-light hover:text-brand-green hover:bg-brand-cream/50 transition-colors"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+                {item.image && (
+                  <div class="w-48 p-3 border-l border-gray-100 bg-brand-cream/30 rounded-r-lg flex items-center justify-center">
+                    <img src={item.image} alt="Featured product" class="w-full h-auto object-contain rounded-lg" width="200" height="200" loading="lazy" />
+                  </div>
+                )}
               </div>
             </div>
           ) : (

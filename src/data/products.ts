@@ -84,10 +84,10 @@ export const products: Product[] = [
       '1x Quick Start Guide',
     ],
     images: [
-      '/images/products/club-cleaner-01.webp',
-      '/images/products/club-cleaner-02.webp',
-      '/images/products/club-cleaner-03.webp',
-      '/images/products/club-cleaner-04.webp',
+      '/images/products/club-cleaner-01.png',
+      '/images/products/club-cleaner-02.jpg',
+      '/images/products/club-cleaner-03.jpg',
+      '/images/products/club-cleaner-04.jpg',
     ],
     amazonUrl: 'https://www.amazon.com/dp/B0FHWLLC55',
     amazonAsin: 'B0FHWLLC55',
@@ -142,9 +142,9 @@ export const products: Product[] = [
       '1x Carabiner Clip',
     ],
     images: [
-      '/images/products/towel-01.webp',
-      '/images/products/towel-02.webp',
-      '/images/products/towel-03.webp',
+      '/images/products/towel-01.jpg',
+      '/images/products/towel-02.jpg',
+      '/images/products/towel-03.jpg',
     ],
     amazonUrl: 'https://www.amazon.com/dp/MOSTYTOWEL',
     amazonAsin: 'MOSTYTOWEL',
@@ -215,7 +215,7 @@ export const products: Product[] = [
     },
     rating: 4.4,
     reviewCount: 310,
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     slug: 'stand-bag',
@@ -275,6 +275,63 @@ export const products: Product[] = [
     reviewCount: 185,
     isFeatured: false,
   },
+  {
+    slug: 'hair-removal-gloves',
+    name: 'Hair Removal Gloves',
+    tagline: 'Gentle & Effective Hair Removal',
+    shortDescription:
+      'Soft, flexible hair removal gloves that gently buff away unwanted hair for smooth, radiant skin.',
+    description:
+      'MOSTY Hair Removal Gloves offer a gentle, chemical-free way to remove unwanted hair. Made from ultra-fine crystalline material, these gloves exfoliate while removing hair, leaving your skin silky smooth. Suitable for arms, legs, and body use — simply slip them on and buff in circular motions.',
+    category: 'accessories',
+    features: [
+      {
+        icon: 'heart',
+        title: 'Gentle on Skin',
+        description: 'Ultra-fine crystalline surface buffs hair away without irritation.',
+      },
+      {
+        icon: 'droplet',
+        title: 'Waterproof Design',
+        description: 'Use wet or dry — gloves work effectively in the shower or bath.',
+      },
+      {
+        icon: 'rotate-cw',
+        title: 'Reusable & Durable',
+        description: 'High-quality material lasts for months with proper care.',
+      },
+      {
+        icon: 'maximize',
+        title: 'One Size Fits Most',
+        description: 'Flexible, stretchy material adapts to most hand sizes comfortably.',
+      },
+    ],
+    howItWorks: [
+      { step: 1, title: 'Slip On', description: 'Put on the gloves like regular household gloves.' },
+      { step: 2, title: 'Buff Gently', description: 'Use circular motions on the target area for 2-3 minutes.' },
+      { step: 3, title: 'Rinse & Moisturize', description: 'Rinse skin and apply moisturizer for best results.' },
+    ],
+    whatIsIncluded: [
+      '1 Pair of MOSTY Hair Removal Gloves',
+      '1x Instruction Card',
+    ],
+    images: [
+      '/images/products/hair-removal-gloves-01.jpg',
+      '/images/products/hair-removal-gloves-02.jpg',
+      '/images/products/hair-removal-gloves-03.jpg',
+    ],
+    amazonUrl: 'https://www.amazon.com/dp/MOSTYGLOVES',
+    amazonAsin: 'MOSTYGLOVES',
+    specs: {
+      dimensions: '7.5" x 4.5" (per glove)',
+      weight: '2.8 oz (pair)',
+      material: 'Crystalline + Silicone Blend',
+      color: 'Pink / White',
+    },
+    rating: 4.6,
+    reviewCount: 520,
+    isFeatured: true,
+  },
 ];
 
 export const categories = [
@@ -292,8 +349,8 @@ export const categories = [
   },
   {
     slug: 'accessories',
-    name: 'Golf Accessories',
-    description: 'Essential accessories to elevate your game. More products coming soon.',
+    name: 'Golf Accessories & Beauty',
+    description: 'Essential accessories and beauty tools to elevate your game and grooming routine.',
     icon: 'plus-circle',
   },
 ];

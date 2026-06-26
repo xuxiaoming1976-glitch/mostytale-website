@@ -5,7 +5,7 @@ const productsCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     tagline: z.string(),
-    category: z.enum(['cleaning', 'golf-bags', 'accessories']),
+    category: z.enum(['cleaning', 'golf-bags', 'accessories', 'beauty']),
     shortDescription: z.string(),
     amazonUrl: z.string().url(),
     amazonAsin: z.string(),

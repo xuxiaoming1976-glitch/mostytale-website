@@ -68,7 +68,7 @@ const featureIcons: Record<string, string> = {
       <span>/</span>
       <a href="/products/" class="hover:text-brand-green transition-colors">Products</a>
       <span>/</span>
-      <a href={`/products/${product.category}/`} class="hover:text-brand-green transition-colors capitalize">
+      <a href={`/products/${product.category}/`} class="hover:text-brand-green transition-colors">
         {product.category === 'cleaning' ? 'Cleaning' : product.category === 'golf-bags' ? 'Golf Bags' : 'Accessories'}
       </a>
       <span>/</span>
@@ -107,7 +107,7 @@ const featureIcons: Record<string, string> = {
 
       <!-- Product Info -->
       <div>
-        <span class="inline-block px-3 py-1 bg-brand-green/10 text-brand-green text-sm font-medium rounded-full capitalize mb-4">
+        <span class="inline-block px-3 py-1 bg-brand-green/10 text-brand-green text-sm font-medium rounded-full mb-4">
           {product.category === 'cleaning' ? 'Cleaning' : product.category === 'golf-bags' ? 'Golf Bags' : 'Accessories'}
         </span>
         <h1 class="text-h1 text-text mb-2">{product.name}</h1>

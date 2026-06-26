@@ -1,6 +1,7 @@
 export interface NavItem {
   label: string;
   href: string;
+  image?: string;
   children?: NavItem[];
 }
 
@@ -9,11 +10,12 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'Products',
     href: '/products/',
+    image: '/images/products/cleaner-bag-menu.png',
     children: [
       { label: 'All Products', href: '/products/' },
-      { label: 'Cleaning', href: '/products/cleaning/' },
-      { label: 'Golf Bags', href: '/products/golf-bags/' },
-      { label: 'Accessories', href: '/products/accessories/' },
+      { label: 'Golf Cleaner Bag', href: '/products/cleaning/club-ball-cleaner-bag/' },
+      { label: 'Golf Towel', href: '/products/cleaning/golf-towel/' },
+      { label: 'Hair Removal Gloves', href: '/products/accessories/hair-removal-gloves/' },
     ],
   },
   { label: 'About', href: '/about/' },
@@ -24,9 +26,9 @@ export const mainNavigation: NavItem[] = [
 
 export const footerNavigation = {
   products: [
-    { label: 'Cleaning Series', href: '/products/cleaning/' },
-    { label: 'Golf Bags', href: '/products/golf-bags/' },
-    { label: 'Accessories', href: '/products/accessories/' },
+    { label: 'Golf Cleaner Bag', href: '/products/cleaning/club-ball-cleaner-bag/' },
+    { label: 'Golf Towel', href: '/products/cleaning/golf-towel/' },
+    { label: 'Hair Removal Gloves', href: '/products/accessories/hair-removal-gloves/' },
     { label: 'All Products', href: '/products/' },
   ],
   company: [

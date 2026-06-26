@@ -31,7 +31,7 @@ const { product, index = 0 } = Astro.props;
       )}
     </div>
     <!-- Category badge -->
-    <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/80 backdrop-blur-sm rounded-full text-xs font-medium text-text-muted capitalize">
+    <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/80 backdrop-blur-sm rounded-full text-xs font-medium text-text-muted">
       {product.category === 'cleaning' ? 'Cleaning' : product.category === 'golf-bags' ? 'Golf Bags' : 'Accessories'}
     </span>
   </a>
