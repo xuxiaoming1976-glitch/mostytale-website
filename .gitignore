@@ -34,3 +34,9 @@ Thumbs.db
 *.log
 npm-debug.log*
 featured products/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
